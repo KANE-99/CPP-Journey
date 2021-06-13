@@ -10,14 +10,15 @@
             "request": "launch",
             "program": "${fileDirname}\\${fileBasenameNoExtension}",
             "args": [
-                "<${fileDirname}//input.txt",
-                ">${fileDirname}//output.txt"
+                "<Current//input.txt",
+                ">Current//output.txt"
             ],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
@@ -26,12 +27,7 @@
                 }
             ],
             "preLaunchTask": "C/C++: g++ build active file",
-            "windows": {
-                "miDebuggerPath": "C:\\Program Files\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin\\gdb.exe"
-            },
-            "linux": {
-                "miDebuggerPath": "/usr/bin/gdb"
-            }
+
         }
     ]
 }
