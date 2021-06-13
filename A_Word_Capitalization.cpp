@@ -54,32 +54,9 @@ long get_num(){
 }
 
 void solve(string &s){
-  vi a;
-  for0(i, s.size()) {
-    if (s[i] == '+') continue;
-    a.push_back(s[i] - '0');
-  }
-  sort(a.begin(), a.end());
-  cout<<a[0];
-  for(int i = 1; i < a.size(); i++) {
-    cout << '+' << a[i];
-  }
+  s[0] = toupper(s[0]);
+  cout << s;
 }
-
-// void solve(string &str) {
-//   int a[100];
-//   int j=0;
-//   for(int i=0;i<str.size();i++) {
-//       if(str[i]!='+') {
-//           a[j++]=str[i]-'0';
-//       }
-//   }
-//   sort(a,a+j);
-//   cout<<a[0];
-//   for(int i=1;i<j;i++) {
-//       cout<<"+"<<a[i]; 
-//   }
-// }
 
 
 int main() {

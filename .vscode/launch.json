@@ -10,8 +10,8 @@
             "request": "launch",
             "program": "${fileDirname}\\${fileBasenameNoExtension}",
             "args": [
-                "<Current//input.txt",
-                ">Current//output.txt"
+                "<input.txt",
+                ">output.txt"
             ],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",

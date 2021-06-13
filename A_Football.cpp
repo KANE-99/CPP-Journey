@@ -53,33 +53,26 @@ long get_num(){
     }
 }
 
-void solve(string &s){
-  vi a;
-  for0(i, s.size()) {
-    if (s[i] == '+') continue;
-    a.push_back(s[i] - '0');
+void solve(string &str){
+  int longSub = 1;
+  int maxi = 1; 
+  char comp = str[0];
+  for(int i = 1; i < (int)str.size(); i++) {
+    if (str[i] == comp) {
+      longSub++;
+    } else {
+      maxi = max(maxi, longSub);
+      longSub = 1;
+      comp = str[i];
+    }
   }
-  sort(a.begin(), a.end());
-  cout<<a[0];
-  for(int i = 1; i < a.size(); i++) {
-    cout << '+' << a[i];
+  maxi = max(maxi, longSub);
+  if (maxi >= 7) {
+    cout << "YES";
+  } else {
+    cout << "NO";
   }
 }
-
-// void solve(string &str) {
-//   int a[100];
-//   int j=0;
-//   for(int i=0;i<str.size();i++) {
-//       if(str[i]!='+') {
-//           a[j++]=str[i]-'0';
-//       }
-//   }
-//   sort(a,a+j);
-//   cout<<a[0];
-//   for(int i=1;i<j;i++) {
-//       cout<<"+"<<a[i]; 
-//   }
-// }
 
 
 int main() {

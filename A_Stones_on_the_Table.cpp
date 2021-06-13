@@ -53,33 +53,25 @@ long get_num(){
     }
 }
 
-void solve(string &s){
-  vi a;
-  for0(i, s.size()) {
-    if (s[i] == '+') continue;
-    a.push_back(s[i] - '0');
+void solve(int tmp){
+  string str;
+  cin >> str;
+  if (str.size() <=1) {
+    cout << 0;
+    return;
   }
-  sort(a.begin(), a.end());
-  cout<<a[0];
-  for(int i = 1; i < a.size(); i++) {
-    cout << '+' << a[i];
-  }
-}
 
-// void solve(string &str) {
-//   int a[100];
-//   int j=0;
-//   for(int i=0;i<str.size();i++) {
-//       if(str[i]!='+') {
-//           a[j++]=str[i]-'0';
-//       }
-//   }
-//   sort(a,a+j);
-//   cout<<a[0];
-//   for(int i=1;i<j;i++) {
-//       cout<<"+"<<a[i]; 
-//   }
-// }
+  char comp = str[0];
+  ll count = 0;
+  for (int i = 1; i<tmp; i++) {
+    if (str[i] == comp) {
+      count++;
+    } else {
+      comp = str[i];
+    }
+  }
+  cout << count;
+}
 
 
 int main() {
@@ -89,8 +81,9 @@ int main() {
     cout << fixed;
     
     // Solution starts
-    string t;
+    int t;
     cin >> t;
     solve(t);
+    
     return 0;
 }

@@ -53,33 +53,21 @@ long get_num(){
     }
 }
 
-void solve(string &s){
-  vi a;
-  for0(i, s.size()) {
-    if (s[i] == '+') continue;
-    a.push_back(s[i] - '0');
+void solve(string &str){
+  int count[26] = {0};
+  int num = 0;
+  for0(i, str.size()) {
+    count[str[i] - 97]++;
   }
-  sort(a.begin(), a.end());
-  cout<<a[0];
-  for(int i = 1; i < a.size(); i++) {
-    cout << '+' << a[i];
+  for0(i, 26) {
+    if (count[i] >= 1) num++;
+  }
+  if (num % 2 == 0) {
+    cout << "CHAT WITH HER!";
+  } else {
+    cout << "IGNORE HIM!";
   }
 }
-
-// void solve(string &str) {
-//   int a[100];
-//   int j=0;
-//   for(int i=0;i<str.size();i++) {
-//       if(str[i]!='+') {
-//           a[j++]=str[i]-'0';
-//       }
-//   }
-//   sort(a,a+j);
-//   cout<<a[0];
-//   for(int i=1;i<j;i++) {
-//       cout<<"+"<<a[i]; 
-//   }
-// }
 
 
 int main() {

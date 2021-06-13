@@ -53,33 +53,13 @@ long get_num(){
     }
 }
 
-void solve(string &s){
-  vi a;
-  for0(i, s.size()) {
-    if (s[i] == '+') continue;
-    a.push_back(s[i] - '0');
-  }
-  sort(a.begin(), a.end());
-  cout<<a[0];
-  for(int i = 1; i < a.size(); i++) {
-    cout << '+' << a[i];
-  }
+void solve(int &x, int &y, int &z){
+  int x1,y1,z1;
+  cin >> x1 >> y1 >> z1;
+  x += x1;
+  y += y1;
+  z += z1;
 }
-
-// void solve(string &str) {
-//   int a[100];
-//   int j=0;
-//   for(int i=0;i<str.size();i++) {
-//       if(str[i]!='+') {
-//           a[j++]=str[i]-'0';
-//       }
-//   }
-//   sort(a,a+j);
-//   cout<<a[0];
-//   for(int i=1;i<j;i++) {
-//       cout<<"+"<<a[i]; 
-//   }
-// }
 
 
 int main() {
@@ -89,8 +69,16 @@ int main() {
     cout << fixed;
     
     // Solution starts
-    string t;
+    int t;
+    int x = 0, y = 0, z = 0;
     cin >> t;
-    solve(t);
+    while(t--){
+      solve(x, y, z);
+    }
+    if (x == 0 && y == 0 && z == 0) {
+      cout << "YES";
+    } else {
+      cout << "NO";
+    }
     return 0;
 }

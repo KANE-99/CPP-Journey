@@ -53,44 +53,29 @@ long get_num(){
     }
 }
 
-void solve(string &s){
-  vi a;
-  for0(i, s.size()) {
-    if (s[i] == '+') continue;
-    a.push_back(s[i] - '0');
-  }
-  sort(a.begin(), a.end());
-  cout<<a[0];
-  for(int i = 1; i < a.size(); i++) {
-    cout << '+' << a[i];
-  }
+void solve() {
+    string k;
+    cin >> k;
+    string ans = "";
+    string s = "aoyeui";
+    for (auto e : k) {
+        bool f = 1;
+        if (e >= 'A' && e <= 'Z') e += 32;
+        if (s.find(e) == string::npos) {
+            ans.push_back('.');
+            ans.push_back(e);
+        } 
+    }
+    cout << ans << '\n';
 }
-
-// void solve(string &str) {
-//   int a[100];
-//   int j=0;
-//   for(int i=0;i<str.size();i++) {
-//       if(str[i]!='+') {
-//           a[j++]=str[i]-'0';
-//       }
-//   }
-//   sort(a,a+j);
-//   cout<<a[0];
-//   for(int i=1;i<j;i++) {
-//       cout<<"+"<<a[i]; 
-//   }
-// }
 
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(0);
-    cout.precision(10);
-    cout << fixed;
+    cout.tie(0);
     
     // Solution starts
-    string t;
-    cin >> t;
-    solve(t);
+    solve();
     return 0;
 }
